@@ -83,3 +83,19 @@ path/to/your/project/javascript/react-ts/example/UserProfile.tsx
 *   **`jsx-a11y/alt-text`**: This accessibility rule requires `<img>` elements to have an `alt` attribute, which is crucial for screen readers and for situations where the image cannot be displayed. The example `<img>` tag is missing this attribute.
 
 Additionally, the `UserProfile.tsx` file contains some inconsistent formatting (like mixed single and double quotes for strings, and varied indentation). Running the format script (`npm run format` or `yarn format`) will automatically correct these inconsistencies according to the rules defined in `.prettierrc`.
+
+## IDE Integration (VS Code)
+
+To further enhance your development experience in Visual Studio Code, this setup can be complemented with editor-specific settings and extensions.
+
+1.  **VS Code Settings**:
+    This directory includes a sample VS Code settings file at `.vscode/settings.json`. To use it:
+    *   Copy this `javascript/react-ts/.vscode/settings.json` file to the `.vscode/` directory in your own project's root. If you already have a `settings.json` file, merge the contents.
+    *   These settings enable auto-fixing of ESLint issues on save and set Prettier as the default formatter for JavaScript/TypeScript files, also triggering format on save.
+
+2.  **Recommended VS Code Extensions**:
+    For the settings to work effectively and for the best development experience, please install the following extensions in VS Code:
+    *   **ESLint** (by Microsoft, extension ID: `dbaeumer.vscode-eslint`): Integrates ESLint into VS Code, showing errors and enabling auto-fix.
+    *   **Prettier - Code formatter** (by Prettier, extension ID: `esbenp.prettier-vscode`): Provides Prettier support and enables formatting on save.
+
+With these settings and extensions, your code will be automatically linted and formatted according to the established rules each time you save a file.
