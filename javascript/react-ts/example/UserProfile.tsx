@@ -7,14 +7,13 @@ interface UserProfileProps {
 
 const UserProfile: React.FC<UserProfileProps> = ({ userId, name }) => {
   const [data, setData] = useState<string | null>(null);
-  const [unusedSetter, setUnusedSetter] = useState<boolean>(false); // Intentionally unused setter
+  // Removed unused useState: const [unusedSetter, setUnusedSetter] = useState<boolean>(false);
 
   useEffect(() => {
     // Simulate data fetching
-    console.log("Fetching data for user:", userId);
+    console.log('Fetching data for user:', userId); // Changed to single quotes
     setData(`User data for ${name}`);
-    // Missing 'name' in dependency array
-  }, [userId]); // Intentionally missing 'name'
+  }, [userId, name]); // Added 'name' to dependency array
 
   return (
     <div>
@@ -22,9 +21,9 @@ const UserProfile: React.FC<UserProfileProps> = ({ userId, name }) => {
       <p>ID: {userId}</p>
       <p>Name: {name}</p>
       {data && <p>Data: {data}</p>}
-      {/* Intentionally missing alt attribute */}
-      <img src={`https://example.com/avatar/${userId}.jpg`} />
-      <button onClick={() => console.log("Button clicked")}>Click Me</button> {/* Mixed quotes and indentation for Prettier */}
+      <img src={`https://example.com/avatar/${userId}.jpg`} alt='' /> {/* Added alt attribute */}
+      {/* Changed to single quotes and Prettier will handle formatting */}
+      <button onClick={() => console.log('Button clicked')}>Click Me</button>
     </div>
   );
 };
