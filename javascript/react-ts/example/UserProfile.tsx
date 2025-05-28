@@ -21,7 +21,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ userId, name }) => {
       <p>ID: {userId}</p>
       <p>Name: {name}</p>
       {data && <p>Data: {data}</p>}
-      <img src={`https://example.com/avatar/${userId}.jpg`} alt='' /> {/* Added alt attribute */}
+      <img src={`https://example.com/avatar/${userId}.jpg`} alt="" /> {/* Added alt attribute */}
       {/* Changed to single quotes and Prettier will handle formatting */}
       <button onClick={() => console.log('Button clicked')}>Click Me</button>
     </div>
