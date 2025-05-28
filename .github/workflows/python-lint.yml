@@ -1,0 +1,35 @@
+name: Lint Python Example
+
+on:
+  push:
+    paths:
+      - 'python/general/**'
+  pull_request:
+    paths:
+      - 'python/general/**'
+  # The user also requested to trigger on any PR, which the above pull_request key does.
+  # If they meant *any* PR regardless of path, the paths filter would be removed from pull_request.
+  # Assuming paths filter is desired for PRs too for now.
+
+jobs:
+  lint-python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4 # Using a slightly newer version of checkout
+
+      - name: Set up Python
+        uses: actions/setup-python@v5 # Using a slightly newer version of setup-python
+        with:
+          python-version: '3.11'
+
+      - name: Install linters
+        run: pip install ruff black
+
+      - name: Run Ruff linter
+        working-directory: python/general
+        run: ruff check .
+
+      - name: Run Black formatter check
+        working-directory: python/general
+        run: black --check .
