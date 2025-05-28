@@ -1,0 +1,31 @@
+name: Lint React+TS Example
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'javascript/react-ts/**'
+  pull_request:
+    paths:
+      - 'javascript/react-ts/**'
+
+jobs:
+  lint-react-ts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+
+      - name: Install dependencies
+        working-directory: javascript/react-ts
+        run: npm install
+
+      - name: Run ESLint
+        working-directory: javascript/react-ts
+        run: npm run lint
