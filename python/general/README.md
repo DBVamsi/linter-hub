@@ -80,4 +80,3 @@ This setup is complemented by the `.github/workflows/python-lint.yml` GitHub Act
 ## Example
 
 The `example/calculator.py` file within this directory serves as a simple demonstration. It was initially written with several intentional linting and formatting errors, which were then corrected using Ruff and Black according to the rules in `pyproject.toml`. This ensures it passes the checks in our automated workflow.
-```
