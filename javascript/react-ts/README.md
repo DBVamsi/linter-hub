@@ -59,7 +59,6 @@ yarn add -D @typescript-eslint/eslint-plugin@^5.0.0 @typescript-eslint/parser@^5
 
 *   **`eslint-plugin-react-hooks`**: This plugin is crucial for React projects using Hooks. It enforces the Rules of Hooks (e.g., only call Hooks at the top level, only call Hooks from React functions), which helps prevent common bugs and ensures Hooks behave as expected.
 *   **`eslint-plugin-jsx-a11y`**: Accessibility is a vital aspect of web development. This plugin helps identify and enforce accessibility best practices in your JSX, making your application more usable for people with disabilities. It checks for things like proper ARIA attributes, image alt text, and keyboard navigability.
-```
 
 ## Demonstration
 
