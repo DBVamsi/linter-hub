@@ -7,13 +7,11 @@ interface UserProfileProps {
 
 const UserProfile: React.FC<UserProfileProps> = ({ userId, name }) => {
   const [data, setData] = useState<string | null>(null);
-  // Removed unused useState: const [unusedSetter, setUnusedSetter] = useState<boolean>(false);
 
   useEffect(() => {
-    // Simulate data fetching
-    console.log('Fetching data for user:', userId); // Changed to single quotes
+    console.log('Fetching data for user:', userId);
     setData(`User data for ${name}`);
-  }, [userId, name]); // Added 'name' to dependency array
+  }, [userId, name]);
 
   return (
     <div>
@@ -21,9 +19,13 @@ const UserProfile: React.FC<UserProfileProps> = ({ userId, name }) => {
       <p>ID: {userId}</p>
       <p>Name: {name}</p>
       {data && <p>Data: {data}</p>}
-      <img src={`https://example.com/avatar/${userId}.jpg`} alt="" /> {/* Added alt attribute */}
-      {/* Changed to single quotes and Prettier will handle formatting */}
-      <button onClick={() => console.log('Button clicked')}>Click Me</button>
+      <img
+        src={`https://example.com/avatar/${userId}.jpg`}
+        alt=""
+      />
+      <button onClick={() => console.log('Button clicked')}>
+        Click Me
+      </button>
     </div>
   );
 };
