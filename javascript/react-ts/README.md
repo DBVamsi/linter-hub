@@ -1,4 +1,4 @@
-# React + TypeScript ESLint & Prettier Configuration
+# React + TypeScript ESLint & Prettier Configuration 
 
 This directory contains a recommended setup for ESLint and Prettier in a React and TypeScript project.
 
